@@ -13,14 +13,14 @@ import static org.slf4j.LoggerFactory.getLogger;
 /**
  * Created by V.Verminsky on 23.03.2017.
  */
-public class LayoutUtil {
+public class JfxLayoutUtil {
 
-    private static final Logger LOGGER = getLogger(LayoutUtil.class);
+    private static final Logger LOGGER = getLogger(JfxLayoutUtil.class);
 
-    private LayoutUtil(){}
+    private JfxLayoutUtil(){}
 
     private static URL getResource(String name) {
-        return LayoutUtil.class.getClassLoader().getResource(name);
+        return JfxLayoutUtil.class.getClassLoader().getResource(name);
     }
 
     public static <T> void setUpView(String fxml, Consumer<T> action) {

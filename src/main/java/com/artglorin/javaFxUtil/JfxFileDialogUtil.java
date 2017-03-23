@@ -10,11 +10,11 @@ import java.util.List;
 /**
  * Created by V.Verminsky on 27.06.2016.
  */
-public class JavaFxFileDialogUtil {
+public class JfxFileDialogUtil {
 
     private static File lastDir;
 
-    private JavaFxFileDialogUtil() {
+    private JfxFileDialogUtil() {
     }
 
     public static File openDialog() {
