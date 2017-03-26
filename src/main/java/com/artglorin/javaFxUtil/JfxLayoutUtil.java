@@ -57,6 +57,8 @@ public class JfxLayoutUtil {
             } catch (IOException e) {
                 LOGGER.error("cannot load fxml file: {}.fxml\nException: {}", fxml,  e);
             }
+        } else {
+            LOGGER.error("cannot load fxml file: {}.fxml\nException: {}", fxml);
         }
     }
 
