@@ -102,4 +102,14 @@ public class JfxFileDialogUtil {
     private static FileChooser.ExtensionFilter getFilter(String description,String extension) {
         return new FileChooser.ExtensionFilter(description, extension);
     }
+
+    public static File getLastDir() {
+        return lastDir;
+    }
+
+    public static void setLastDir(File lastDir) {
+        if (lastDir.exists()) {
+            JfxFileDialogUtil.lastDir = lastDir;
+        }
+    }
 }
