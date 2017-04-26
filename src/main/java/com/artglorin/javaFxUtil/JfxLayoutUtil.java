@@ -58,6 +58,19 @@ public class JfxLayoutUtil {
         });
     }
 
+    public  static <T> Optional<T> createNewController(String fxml, Class<T> tClass) {
+        return getResource(fxml).map(url -> {
+            final FXMLLoader loader = newLoader();
+            try (InputStream inputStream = url.openStream()){
+                loader.load(inputStream);
+                return loader.getController();
+            } catch (IOException e) {
+                LOGGER.error("Cannot load fxml file: {}.fxml\nException: {}", fxml, e);
+            }
+            return null;
+        });
+    }
+
     public static <T> void setUpView(String fxml, Consumer<T> action) {
         setUpControllerAndView(fxml, (BiConsumer<? extends Object, T>) (controller, view) -> action.accept(view));
     }
